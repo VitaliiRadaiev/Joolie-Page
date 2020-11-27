@@ -557,6 +557,85 @@ move();
 }
 
 cardVideoHandler();;
+	
+	{
+	const slider = document.querySelector('.latest-articles__list');
+	if(slider) {
+		let mySwiper;
+
+		function mobileSlider() {
+			if(document.documentElement.clientWidth <= 767 && slider.dataset.mobile == 'false') {
+				mySwiper = new Swiper(slider, {
+					slidesPerView: 1,
+					spaceBetween: 15,
+					speed: 600,
+					pagination: {
+					    el: slider.querySelector('.slider-pagination'),
+					    clickable: true,
+					    renderBullet: function(index, className) {
+					    	let num;
+					    	if((index + 1) >= 10) {
+					    	    num = index + '.';
+					    	} else {
+					    		num = '0' + (index + 1) + '.'; 
+					    	}
+					    	return '<span class="'+ className +'"> ' + num + '</span>';
+					    }
+					  },
+				});
+
+				slider.dataset.mobile = 'true';
+			}
+
+			if(document.documentElement.clientWidth > 767) {
+				slider.dataset.mobile = 'false';
+
+				if(slider.classList.contains('swiper-container-initialized')) {
+					mySwiper.destroy();
+				}
+			}
+		}
+
+		mobileSlider();
+
+		window.addEventListener('resize', () => {
+			mobileSlider();
+		})
+	}
+
+};
+	
+	// ==  slider ==========================================================================
+{
+	let slider = document.querySelector('.testimonials-slider__body .swiper-container');
+	if(slider) {
+		let promoSliderContent = new Swiper(slider, {
+			slidesPerView: 1,
+			loop: true,
+			speed: 600,
+			autoHeight: true,
+			pagination: {
+			    el: document.querySelector('.testimonials-slider__pagination'),
+			     clickable: true,
+			     renderBullet: function(index, className) {
+			     	let num;
+			     	if((index + 1) >= 10) {
+			     	    num = index + '.';
+			     	} else {
+			     		num = '0' + (index + 1) + '.'; 
+			     	}
+			     	return '<span class="'+ className +'"> ' + num + '</span>';
+			     }
+			  },
+			 navigation: {
+			 	nextEl: '.testimonials-slider__btn-next',
+			 	prevEl: '.testimonials-slider__btn-prev',
+			 }, 
+		})
+
+	}
+}
+// == and  slider ==========================================================================;
 
 // ==== AND BLOCKS =====================================================
 

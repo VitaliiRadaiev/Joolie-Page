@@ -406,7 +406,7 @@ move();
 				let promoSlideBg = new Swiper(sliderBg, {
 				slidesPerView:1,
 				effect: 'fade',
-				//loop: true,
+				loop: true,
 				speed: 600,
 				// autoplay: {
 				//   delay: document.querySelector('.res-single .res-single__hero.slider') ? 8000 : 4000,
@@ -423,7 +423,7 @@ move();
 		let sliderContent = document.querySelector('.promo-slider__content .swiper-container');
 				let promoSliderContent = new Swiper(sliderContent, {
 				slidesPerView: 1,
-				//loop: true,
+				loop: true,
 				speed: 600,
 				// autoplay: {
 				//   delay: document.querySelector('.res-single .res-single__hero.slider') ? 8000 : 4000,

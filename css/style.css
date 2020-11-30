@@ -2330,6 +2330,7 @@ img {
   width: 105%;
   z-index: 2;
   pointer-events: none;
+  mix-blend-mode: darken;
 }
 
 .promo-slider__decor_1 img {
@@ -2347,6 +2348,7 @@ img {
   width: 105%;
   z-index: 3;
   pointer-events: none;
+  mix-blend-mode: darken;
 }
 
 .promo-slider__decor_2 img {
@@ -2378,7 +2380,7 @@ img {
   width: 100%;
   height: 100%;
   z-index: 2;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .promo-slider__bg .swiper-slide img {
@@ -3184,6 +3186,7 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
+  mix-blend-mode: darken;
 }
 
 .get-your-gift-block__decor_1 img {
@@ -3200,6 +3203,7 @@ img {
   right: 0;
   width: 80%;
   height: 100%;
+  mix-blend-mode: darken;
 }
 
 .get-your-gift-block__decor_2 img {

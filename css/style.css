@@ -2931,8 +2931,8 @@ img {
 
 .popular-products__tabs-content.active {
   display: block;
-  -webkit-animation: fadeIn 0.3s linear;
-          animation: fadeIn 0.3s linear;
+  -webkit-animation: fadeInAnim 0.3s linear;
+          animation: fadeInAnim 0.3s linear;
 }
 
 .popular-products__list {

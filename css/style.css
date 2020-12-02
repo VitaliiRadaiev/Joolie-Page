@@ -1742,7 +1742,7 @@ img {
 }
 
 .header__menu-link:hover {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(236, 157, 171, 0.3);
 }
 
 .header__menu-sublist {
@@ -1753,7 +1753,7 @@ img {
   position: absolute;
   top: 100%;
   left: 0;
-  min-width: 100%;
+  min-width: 170px;
   -webkit-animation: sublistFadeIn .3s ease;
           animation: sublistFadeIn .3s ease;
   -webkit-transform: translateY(20px);
@@ -1793,18 +1793,18 @@ img {
 
 .header__menu-sublink {
   display: block;
-  padding: 15px 10px;
+  padding: 15px 19px;
   -webkit-transition: all .2s ease;
   -o-transition: all .2s ease;
   transition: all .2s ease;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.1em;
   color: #555555;
 }
 
 .header__menu-sublink:hover {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(236, 157, 171, 0.3);
 }
 
 .header__logo {
@@ -1851,7 +1851,7 @@ img {
 }
 
 .header__action-link:hover {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(236, 157, 171, 0.3);
 }
 
 .header__action-icon-wrap {
@@ -2023,7 +2023,7 @@ img {
 }
 
 .footer__column a:hover {
-  text-decoration: underline;
+  color: rgba(68, 68, 68, 0.7);
 }
 
 .footer__column ul {
@@ -3895,11 +3895,11 @@ img {
   }
 
   .form-search__label:hover {
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(236, 157, 171, 0.3);
   }
 
   .form-search__submit:hover {
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(236, 157, 171, 0.3);
   }
 
   .btn-prev:hover {

@@ -360,6 +360,17 @@ move();
 
 // ==== PAGES =====================================================
 
+// ==== ADD PADDING-TOP ================================
+{
+	let wrapper = document.querySelector('.wrapper');
+	if(wrapper) {
+		let headerHeight = document.querySelector('.header').clientHeight;
+		if(wrapper.classList.contains('_padding-top')) {
+			wrapper.style.paddingTop = headerHeight + 'px';
+		}
+	}
+}
+// ==== AND ADD PADDING-TOP ================================
 
 // ==== AND PAGES =====================================================
 

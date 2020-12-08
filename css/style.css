@@ -3195,6 +3195,47 @@ button.btn-default {
   margin-bottom: 40px;
 }
 
+.contact__form-block {
+  position: relative;
+  z-index: 3;
+}
+
+.contact__map {
+  margin-top: -58px;
+  position: relative;
+  z-index: 2;
+}
+
+.form-block-contact__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.form-block-contact__column-1 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 48.68421%;
+          flex: 0 0 48.68421%;
+  margin-right: 60px;
+}
+
+.form-block-contact__column-2 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+#map {
+  height: 400px;
+  width: 100%;
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -4915,6 +4956,14 @@ button.btn-default {
   display: none;
 }
 
+.advantages__text a {
+  font-weight: 500;
+  color: #ec9dab;
+  -webkit-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
 .get-your-gift-block {
   position: relative;
   display: -webkit-box;
@@ -5947,6 +5996,58 @@ button.btn-default {
   margin-bottom: 32px;
 }
 
+.card-timer {
+  position: relative;
+  height: 600px;
+  max-width: 430px;
+  width: 100%;
+}
+
+.card-timer__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.card-timer__body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 30px 20px 30px 20px;
+}
+
+.card-timer__inner {
+  display: inline-block;
+}
+
+.card-timer__suptitle {
+  margin-left: -.71em;
+  margin-bottom: 1em;
+}
+
+.card-timer__title {
+  margin-bottom: 0.56em;
+}
+
 @media (min-width: 576px) {
   .shop .hero {
     margin-bottom: 80px;
@@ -6202,6 +6303,10 @@ button.btn-default {
     stroke: #ec9dab;
   }
 
+  .advantages__text a:hover {
+    color: rgba(236, 157, 171, 0.6);
+  }
+
   .latest-articles__list .swiper-slide {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 33.333%;
@@ -6388,6 +6493,29 @@ button.btn-default {
   .bottom-product-page__column-1 {
     margin-right: 0;
     margin-bottom: 70px;
+  }
+
+  .contact__form-block {
+    margin-bottom: 80px;
+  }
+
+  .contact__map {
+    margin-top: 0;
+  }
+
+  .form-block-contact__body {
+    display: block;
+  }
+
+  .form-block-contact__column-1 {
+    margin-right: 0;
+    margin-bottom: 115px;
+  }
+
+  .form-block-contact__column-2 {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 
   .header__body {

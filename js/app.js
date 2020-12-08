@@ -3,32 +3,32 @@ var isMobile = { Android: function () { return navigator.userAgent.match(/Androi
 
 
 // === lazy load ==================================================================
-document.addEventListener("DOMContentLoaded", function() {
-  var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+document.addEventListener("DOMContentLoaded", function () {
+	var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
 
-  if ("IntersectionObserver" in window) {
-    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          let lazyImage = entry.target;
-          lazyImage.src = lazyImage.dataset.src;
-          //lazyImage.srcset = lazyImage.dataset.srcset;
-          lazyImage.classList.remove("lazy");
-          lazyImageObserver.unobserve(lazyImage);
-        }
-      });
-    });
+	if ("IntersectionObserver" in window) {
+		let lazyImageObserver = new IntersectionObserver(function (entries, observer) {
+			entries.forEach(function (entry) {
+				if (entry.isIntersecting) {
+					let lazyImage = entry.target;
+					lazyImage.src = lazyImage.dataset.src;
+					//lazyImage.srcset = lazyImage.dataset.srcset;
+					lazyImage.classList.remove("lazy");
+					lazyImageObserver.unobserve(lazyImage);
+				}
+			});
+		});
 
-    lazyImages.forEach(function(lazyImage) {
-      lazyImageObserver.observe(lazyImage);
-    });
-  } else {
-    // Possibly fall back to event handlers here
-  }
+		lazyImages.forEach(function (lazyImage) {
+			lazyImageObserver.observe(lazyImage);
+		});
+	} else {
+		// Possibly fall back to event handlers here
+	}
 });
 // === // lazy load ==================================================================
 
-$(document).ready(function() {
+$(document).ready(function () {
 	document.body.classList.add('is-load');
 
 	//SlideToggle
@@ -752,50 +752,49 @@ function selects_update_all() {
 // 	}
 // };
 
-
-// === Проверка, поддержка браузером формата webp ==================================================================
+	// === Проверка, поддержка браузером формата webp ==================================================================
 
 	function testWebP(callback) {
 
-	var webP = new Image();
-	webP.onload = webP.onerror = function () {
-	callback(webP.height == 2);
-	};
-	webP.src = "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA";
+		var webP = new Image();
+		webP.onload = webP.onerror = function () {
+			callback(webP.height == 2);
+		};
+		webP.src = "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA";
 	}
 
 	testWebP(function (support) {
 
-	if (support == true) {
-	document.querySelector('body').classList.add('webp');
-	}else{
-	document.querySelector('body').classList.add('no-webp');
-	}
+		if (support == true) {
+			document.querySelector('body').classList.add('webp');
+		} else {
+			document.querySelector('body').classList.add('no-webp');
+		}
 	});
 
-// === // Проверка, поддержка браузером формата webp ==================================================================
+	// === // Проверка, поддержка браузером формата webp ==================================================================
 
 
 
 
-// ==== parallax =====================================================
-	$('._parallax').parallax();	
-// ==== parallax =====================================================
+	// ==== parallax =====================================================
+	$('._parallax').parallax();
+	// ==== parallax =====================================================
 
 
-// ==== PAGES =====================================================
+	// ==== PAGES =====================================================
 
-// ==== ADD PADDING-TOP ================================
-{
-	let wrapper = document.querySelector('.wrapper');
-	if(wrapper) {
-		let headerHeight = document.querySelector('.header').clientHeight;
-		if(wrapper.classList.contains('_padding-top')) {
-			wrapper.style.paddingTop = headerHeight + 'px';
+	// ==== ADD PADDING-TOP ================================
+	{
+		let wrapper = document.querySelector('.wrapper');
+		if (wrapper) {
+			let headerHeight = document.querySelector('.header').clientHeight;
+			if (wrapper.classList.contains('_padding-top')) {
+				wrapper.style.paddingTop = headerHeight + 'px';
+			}
 		}
 	}
-}
-// ==== AND ADD PADDING-TOP ================================
+	// ==== AND ADD PADDING-TOP ================================
 
 	let priceSlider = document.querySelector('.price-filter__slider');
 
@@ -903,13 +902,92 @@ $('.option').click(function(event) {
 	}
 }
 // == // shop aside =====================================;
+	{
+    let sliderProduct = document.querySelector('.slider-product');
+    if (sliderProduct) {
+        let sliderProductThumbs;
+        sliderProductThumbs = new Swiper(sliderProduct.querySelector('.slider-product__thumbs'), {
+            spaceBetween: 10,
 
-// ==== AND PAGES =====================================================
+            slidesPerView: 'auto',
+            freeMode: true,
+            watchSlidesVisibility: true,
+            watchSlidesProgress: true,
+            breakpoints: {
+                // when window width is >= 320px
+                576: {
+                    direction: 'vertical',
+                },
+            }
+        });
+        let sliderProductTop;
+        sliderProductTop = new Swiper(sliderProduct.querySelector('.slider-product__main'), {
+            spaceBetween: 0,
+            effect: 'fade',
+            thumbs: {
+                swiper: sliderProductThumbs
+            },
+            preloadImages: false,
+            // lazy: {
+            //     loadOnTranstitionStart: false,
+            //     loadPrevNext: true,
+            // }
+        });
+
+        let zoomImages = sliderProduct.querySelectorAll('.zoom');
+        if (zoomImages.length > 0) {
+            zoomImages.forEach(item => {
+                new Drift(item, {
+                    paneContainer: document.querySelector('.detail'),
+                    inlinePane: 900,
+                    inlineOffsetY: -85,
+                    containInline: true,
+                    hoverBoundingBox: true,
+                    zoomFactor: 2.5,
+                });
+
+            })
+        }
+
+        if (document.documentElement.clientWidth < 576) {
+            sliderProduct.append(sliderProduct.querySelector('.slider-product__thumbs'));
+        }
+
+        window.addEventListener('resize', () => {
+            if (document.documentElement.clientWidth < 576) {
+                sliderProduct.append(sliderProduct.querySelector('.slider-product__thumbs'));
+            }
+        })
+    }
+
+}
+
+
+let quantityButtons = document.querySelectorAll('.quantity__button');
+if (quantityButtons.length > 0) {
+    for (let index = 0; index < quantityButtons.length; index++) {
+        const quantityButton = quantityButtons[index];
+        quantityButton.addEventListener("click", function (e) {
+            let value = parseInt(quantityButton.closest('.quantity').querySelector('input').value);
+            if (quantityButton.classList.contains('quantity__button_plus')) {
+                value++;
+            } else {
+                value = value - 1;
+                if (value < 1) {
+                    value = 1
+                }
+            }
+            quantityButton.closest('.quantity').querySelector('input').value = value;
+        });
+    }
+};
+
+	// ==== AND PAGES =====================================================
 
 
 
 
-// ==== BLOCKS =====================================================	
+	// ==== BLOCKS =====================================================	
 
 	// === Burger Handler =====================================================================
 	function burgerBtnAnimation(e) {
@@ -933,7 +1011,7 @@ $('.option').click(function(event) {
 	}
 	$('.burger').click((e) => burgerBtnAnimation(e));
 // === Burger Handler =====================================================================	;
-	
+
 	{
 	let header = document.querySelector('.header');
 	let wrapper = document.querySelector('.wrapper');
@@ -987,7 +1065,7 @@ $('.option').click(function(event) {
 
 
 ;
-	
+
 	{
 	let fromSearch = document.querySelectorAll('.form-search');
 	if(fromSearch) {
@@ -1004,7 +1082,7 @@ $('.option').click(function(event) {
 		})
 	}
 };
-	
+
 	// ==  slider ==========================================================================
 {
 	let promoSlider = document.querySelector('.promo-slider');
@@ -1109,7 +1187,7 @@ $('.option').click(function(event) {
 	}
 
 };
-	
+
 	function cardVideoHandler() {
 	function togglePlayPause(video,btn) {
 		if(video.paused) {
@@ -1164,7 +1242,7 @@ $('.option').click(function(event) {
 }
 
 cardVideoHandler();;
-	
+
 	{
 	const slider = document.querySelector('.latest-articles__list');
 	if(slider) {
@@ -1211,7 +1289,7 @@ cardVideoHandler();;
 	}
 
 };
-	
+
 	// ==  slider ==========================================================================
 {
 	let slider = document.querySelector('.testimonials-slider__body .swiper-container');
@@ -1243,7 +1321,7 @@ cardVideoHandler();;
 	}
 }
 // == and  slider ==========================================================================;
-	
+
 	{
 	let timerBlock = document.querySelector('.time-block');
 	if(timerBlock) {
@@ -1296,7 +1374,7 @@ cardVideoHandler();;
 		countdown (timerBlock.dataset.time);
 	}
 };
-	
+
 	{
 	let popularProductsBlock = document.querySelector('.popular-products');
 	if(popularProductsBlock) {
@@ -1320,6 +1398,36 @@ cardVideoHandler();;
 	}
 };
 
-// ==== AND BLOCKS =====================================================
+	//RATING
+$('.rating.edit .star').hover(function () {
+    var block = $(this).parents('.rating');
+    block.find('.rating__activeline').css({ width: '0%' });
+    var ind = $(this).index() + 1;
+    var linew = ind / block.find('.star').length * 100;
+    setrating(block, linew);
+}, function () {
+    var block = $(this).parents('.rating');
+    block.find('.star').removeClass('active');
+    var ind = block.find('input').val();
+    var linew = ind / block.find('.star').length * 100;
+    setrating(block, linew);
+});
+$('.rating.edit .star').click(function (event) {
+    var block = $(this).parents('.rating');
+    var re = $(this).index() + 1;
+    block.find('input').val(re);
+    var linew = re / block.find('.star').length * 100;
+    setrating(block, linew);
+});
+$.each($('.rating'), function (index, val) {
+    var ind = $(this).find('input').val();
+    var linew = ind / $(this).parent().find('.star').length * 100;
+    setrating($(this), linew);
+});
+function setrating(th, val) {
+    th.find('.rating__activeline').css({ width: val + '%' });
+};
+
+	// ==== AND BLOCKS =====================================================
 
 });

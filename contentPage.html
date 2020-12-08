@@ -1,8 +1,12 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
     <meta charset="UTF-8">
     <title>Content</title>
     <style>
-        p, h2{
+        p,
+        h2 {
             font-family: 'Conv_Lato-Regular', sans-serif;
             font-size: 30px;
             font-weight: 700;
@@ -10,13 +14,14 @@
             margin-left: 40px;
         }
 
-        li{
+        li {
             list-style-type: none;
             counter-increment: li;
             position: relative;
         }
+
         ol li::before {
-            content: counter(li) ;
+            content: counter(li);
             display: inline-block;
             width: 10px;
             margin-right: 8px;
@@ -30,7 +35,8 @@
             color: #595959;
             font-family: 'Conv_Lato-Regular', sans-serif;
         }
-        li a{
+
+        li a {
             text-decoration: none;
             font-family: 'Conv_Lato-Regular', sans-serif;
             font-size: 20px;
@@ -39,12 +45,20 @@
             line-height: 30px;
         }
 
-        li a:hover{
+        li a:hover {
             color: #ff3448;
         }
-    </style></head>
-    <body><h2>Content:</h2><ol>
+    </style>
+</head>
+
+<body>
+    <h2>Content:</h2>
+    <ol>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="shop.html">Shop</a></li>
-    </ol></body></html>
+        <li><a href="product-page.html">Product Page</a></li>
+    </ol>
+</body>
+
+</html>

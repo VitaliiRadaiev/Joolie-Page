@@ -3236,6 +3236,122 @@ button.btn-default {
   width: 100%;
 }
 
+.faq__content {
+  margin: 150px 0 150px;
+  position: relative;
+}
+
+.faq__content-decor {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 10px;
+  width: 229px;
+  height: 544px;
+  z-index: -1;
+}
+
+.faq__content-decor img {
+  width: 100%;
+}
+
+.faq__list {
+  text-align: center;
+}
+
+.faq__list > li {
+  margin-bottom: 50px;
+}
+
+.faq__title {
+  cursor: pointer;
+}
+
+.faq__title .title-5 {
+  margin-bottom: 20px;
+}
+
+.faq__title._active .faq__decor > span {
+  opacity: 1;
+}
+
+.faq__decor {
+  position: relative;
+}
+
+.faq__decor:before {
+  position: absolute;
+  content: '';
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0.1+0,0.02+35,0.02+65,0.1+100 */
+  /* FF3.6-15 */
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.1)), color-stop(35%, rgba(0, 0, 0, 0.02)), color-stop(65%, rgba(0, 0, 0, 0.02)), to(rgba(0, 0, 0, 0.1)));
+  background: -o-linear-gradient(left, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.02) 35%, rgba(0, 0, 0, 0.02) 65%, rgba(0, 0, 0, 0.1) 100%);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.02) 35%, rgba(0, 0, 0, 0.02) 65%, rgba(0, 0, 0, 0.1) 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a000000', endColorstr='#1a000000',GradientType=1 );
+  /* IE6-9 */
+}
+
+.faq__decor > span {
+  display: inline-block;
+  width: 100%;
+  max-width: 179px;
+  opacity: 0.5;
+  -webkit-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+.faq__decor > span img {
+  width: 100%;
+}
+
+.faq__collapse-content {
+  padding: 60px 0 23px;
+  display: none;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.1);
+}
+
+.faq__collapse-content p {
+  max-width: 850px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.faq__collapse {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 7px 15px;
+  color: #ec9dab;
+  -webkit-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+  font-size: 16px;
+  margin-top: 25px;
+}
+
+.faq__collapse > span {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 9px;
+          flex: 0 0 9px;
+  margin: 0 10px;
+}
+
+.faq__collapse > span img {
+  width: 100%;
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -3751,6 +3867,10 @@ button.btn-default {
           flex: 0 0 calc(100% - 34px);
 }
 
+.footer__form-input:focus {
+  border-bottom: 1px solid rgba(85, 85, 85, 0.2);
+}
+
 .footer__form-submit {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 34px;
@@ -3773,7 +3893,6 @@ button.btn-default {
 }
 
 .footer__form-submit > span svg {
-  stroke: #ec9dab;
   -webkit-transition: all .2s ease;
   -o-transition: all .2s ease;
   transition: all .2s ease;
@@ -6224,6 +6343,10 @@ button.btn-default {
     background: rgba(17, 17, 17, 0.08);
   }
 
+  .faq__collapse:hover {
+    background: rgba(0, 0, 0, 0.1);
+  }
+
   .header__burger {
     display: none;
   }
@@ -6244,6 +6367,7 @@ button.btn-default {
     -webkit-transition: all .2s ease;
     -o-transition: all .2s ease;
     transition: all .2s ease;
+    stroke: #ec9dab;
   }
 
   .form-search__label:hover {

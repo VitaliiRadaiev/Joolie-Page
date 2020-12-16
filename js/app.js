@@ -639,7 +639,7 @@ function inputs_init(inputs) {
 		for (let index = 0; index < inputs.length; index++) {
 			const input = inputs[index];
 
-			if (input.classList.contains('_phone')) {
+			if (input.classList.contains('_mask')) {
 				//'+7(999) 999 9999'
 				//'+38(999) 999 9999'
 				//'+375(99)999-99-99'
@@ -653,6 +653,17 @@ function inputs_init(inputs) {
 						//input_clear_mask(input, input_g_value);
 					}
 				}).mask(input);
+			}
+			if (input.classList.contains('_date')) {
+				datepicker(input, {
+					formatter: (input, date, instance) => {
+						const value = date.toLocaleDateString()
+						input.value = value
+					},
+					onSelect: function (input, instance, date) {
+						input_focus_add(input.el);
+					}
+				});
 			}
 
 			//const input_g_value = input.getAttribute('data-value');

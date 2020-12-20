@@ -3856,10 +3856,7 @@ button.btn-default {
 
 .faq__content-decor {
   position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
+  top: 250px;
   right: 10px;
   width: 229px;
   height: 544px;
@@ -3963,6 +3960,25 @@ button.btn-default {
 
 .faq__collapse > span img {
   width: 100%;
+}
+
+.test {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.test > li {
+  margin-bottom: 40px;
+}
+
+.test__collapse {
+  display: none;
+  padding: 40px 15px 30px;
+}
+
+.test h2 {
+  cursor: pointer;
 }
 
 .blog__content {

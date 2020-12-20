@@ -1029,7 +1029,25 @@ if (quantityButtons.length > 0) {
             })
         })
     }
-};
+}
+
+//Spollers
+{
+    let spollers = document.querySelectorAll("._accordione");
+	if (spollers.length > 0) {
+		for (let index = 0; index < spollers.length; index++) {
+			const spoller = spollers[index];
+
+			spoller.addEventListener("click", function (e) {
+				//e.preventDefault();
+				spoller.classList.toggle('_active');
+				_slideToggle(spoller.nextElementSibling);
+			});
+		}
+	}
+}
+
+;
 	{
     let paymentBlock = document.querySelector('.payment-method');
     if(paymentBlock) {

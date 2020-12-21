@@ -9618,6 +9618,8 @@ button.btn-default {
     padding-bottom: 20px;
     -webkit-box-shadow: 0 5px 20px -5px rgba(0, 0, 0, 0.2);
             box-shadow: 0 5px 20px -5px rgba(0, 0, 0, 0.2);
+    max-height: calc(100vh - 130px);
+    overflow: auto;
   }
 
   .header__menu-list {

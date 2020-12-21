@@ -848,6 +848,7 @@ if(priceSlider) {
 		tooltips:[wNumb({decimals: 0, thousand: ','}) , wNumb({decimals: 0, thousand: ','})], 
 		range: {
 			'min': [+min],
+			'30%': [2000,100],
 			'max': [+max],
 		}
 	});
@@ -1154,7 +1155,9 @@ if (quantityButtons.length > 0) {
 			if(document.documentElement.clientWidth < 992) {
 				navMenu.classList.add('_spollers', '_one');
 				navMenu.querySelectorAll('.header__menu-link').forEach(link => {
-					link.classList.add('_spoller');
+					if(link.nextElementSibling) {
+						link.classList.add('_spoller');
+					}
 				})
 			}
 		}

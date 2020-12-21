@@ -848,7 +848,7 @@ if(priceSlider) {
 		tooltips:[wNumb({decimals: 0, thousand: ','}) , wNumb({decimals: 0, thousand: ','})], 
 		range: {
 			'min': [+min],
-			'30%': [2000,100],
+			'1%': [100,100],
 			'max': [+max],
 		}
 	});
